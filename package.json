@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "ts-node-dev --poll --transpile-only --ignore-watch node_modules --respawn src/server.ts",
     "typeorm": "ts-node-dev ./node_modules/typeorm/cli",
-    "start": "node dist/server.js"
+    "start": "node dist/server.js",
+    "build": "yarn tsc"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
