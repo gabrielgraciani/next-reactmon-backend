@@ -1,0 +1,8 @@
+node_modules/
+.idea/
+.vscode/
+build/
+temp/
+tmp/*
+!tmp/.gitkeep
+!tmp/e3aa059cc520f04244e4-*.png

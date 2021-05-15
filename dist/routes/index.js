@@ -1,0 +1,26 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var express_1 = require("express");
+var pokemons_routes_1 = __importDefault(require("../modules/pokemons/routes/pokemons.routes"));
+var users_routes_1 = __importDefault(require("../modules/users/routes/users.routes"));
+var sessions_routes_1 = __importDefault(require("../modules/users/routes/sessions.routes"));
+var types_routes_1 = __importDefault(require("../modules/types/routes/types.routes"));
+var cities_routes_1 = __importDefault(require("../modules/cities/routes/cities.routes"));
+var items_routes_1 = __importDefault(require("../modules/items/routes/items.routes"));
+var pokemonsFeatured_routes_1 = __importDefault(require("../modules/pokemons/routes/pokemonsFeatured.routes"));
+var itemsFeatured_routes_1 = __importDefault(require("../modules/items/routes/itemsFeatured.routes"));
+var citiesFeatured_routes_1 = __importDefault(require("../modules/cities/routes/citiesFeatured.routes"));
+var routes = express_1.Router();
+routes.use('/pokemons', pokemons_routes_1.default);
+routes.use('/users', users_routes_1.default);
+routes.use('/sessions', sessions_routes_1.default);
+routes.use('/types', types_routes_1.default);
+routes.use('/cities', cities_routes_1.default);
+routes.use('/items', items_routes_1.default);
+routes.use('/pokemons-featured', pokemonsFeatured_routes_1.default);
+routes.use('/items-featured', itemsFeatured_routes_1.default);
+routes.use('/cities-featured', citiesFeatured_routes_1.default);
+exports.default = routes;
