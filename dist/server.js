@@ -29,4 +29,4 @@ app.use(function (err, req, res, _) {
     });
 });
 dotenv_1.default.config();
-app.listen(3333, function () { return console.log('Server is running!'); });
+app.listen(process.env.PORT || 3333, function () { return console.log('Server is running!'); });
