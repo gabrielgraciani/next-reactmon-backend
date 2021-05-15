@@ -8,10 +8,7 @@
 
 ```bash
 # Clone este repositório
-$ git clone https://github.com/gabrielgraciani/next-typescript-course
-
-# Acesse a pasta do projeto no seu terminal/cmd
-$ cd 2-reactmon/server
+$ git clone https://github.com/gabrielgraciani/next-reactmon-backend
 
 # Instale as dependências
 $ yarn install or npm install
