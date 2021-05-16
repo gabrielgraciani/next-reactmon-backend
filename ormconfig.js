@@ -30,4 +30,4 @@ const ormConfigProduction = {
   }
 }
 
-module.exports = process.env.API_ENVIRONMENT === 'developmentt' ? ormConfigDevelopment : ormConfigProduction;
+module.exports = process.env.API_ENVIRONMENT === 'development' ? ormConfigDevelopment : ormConfigProduction;
