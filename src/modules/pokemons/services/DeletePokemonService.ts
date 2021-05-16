@@ -23,6 +23,12 @@ class DeletePokemonService {
       throw new AppError('Pokemon not found', 404);
     }
 
+    if (parseInt(id, 10) <= 151) {
+      throw new AppError(
+        "You don't have permission to delete this pokemon. Try to create a new pokemon and update it.",
+      );
+    }
+
     if (pokemon.image) {
       const pokemonImageFilePath = path.join(
         uploadConfig.directory,

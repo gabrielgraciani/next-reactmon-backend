@@ -21,6 +21,9 @@ class ListCitiesService {
     const cities = await citiesRepository.findAndCount({
       skip: offset,
       take: limit,
+      order: {
+        created_at: 'DESC',
+      },
     });
 
     const [citiesResult, citiesCount] = cities;

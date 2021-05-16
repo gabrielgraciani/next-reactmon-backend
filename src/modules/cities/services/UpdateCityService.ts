@@ -30,6 +30,12 @@ class UpdateCityService {
       throw new AppError('City not found', 404);
     }
 
+    if (parseInt(id, 10) <= 13) {
+      throw new AppError(
+        "You don't have permission to delete this city. Try to create a new city and update it.",
+      );
+    }
+
     if (city.image && imageFilename) {
       const cityImageFilePath = path.join(uploadConfig.directory, city.image);
       const cityAvatarFileExists = await fs.promises.stat(cityImageFilePath);

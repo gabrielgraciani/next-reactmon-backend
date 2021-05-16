@@ -21,6 +21,9 @@ class ListPokemonsService {
     const pokemons = await pokemonsRepository.findAndCount({
       skip: offset,
       take: limit,
+      order: {
+        created_at: 'DESC',
+      },
     });
 
     const [pokemonsResult, pokemonsCount] = pokemons;

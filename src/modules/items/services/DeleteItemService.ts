@@ -23,6 +23,12 @@ class DeleteItemService {
       throw new AppError('Item not found', 404);
     }
 
+    if (parseInt(id, 10) <= 18) {
+      throw new AppError(
+        "You don't have permission to delete this item. Try to create a new item and update it.",
+      );
+    }
+
     if (item.image) {
       const itemImageFilePath = path.join(uploadConfig.directory, item.image);
       const itemImageFileExists = await fs.promises.stat(itemImageFilePath);

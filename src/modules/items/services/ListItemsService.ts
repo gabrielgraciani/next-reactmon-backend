@@ -21,6 +21,9 @@ class ListItemsService {
     const items = await itemsRepository.findAndCount({
       skip: offset,
       take: limit,
+      order: {
+        created_at: 'DESC',
+      },
     });
 
     const [itemsResult, itemsCount] = items;
