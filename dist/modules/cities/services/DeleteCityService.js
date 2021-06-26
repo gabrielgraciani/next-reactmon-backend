@@ -66,6 +66,9 @@ var DeleteCityService = /** @class */ (function () {
                         if (!city) {
                             throw new AppError_1.default('City not found', 404);
                         }
+                        if (parseInt(id, 10) <= 13) {
+                            throw new AppError_1.default("You don't have permission to delete this city. Try to create a new city and update it.");
+                        }
                         if (!city.image) return [3 /*break*/, 4];
                         cityImageFilePath = path_1.default.join(upload_1.default.directory, city.image);
                         return [4 /*yield*/, fs_1.default.promises.stat(cityImageFilePath)];

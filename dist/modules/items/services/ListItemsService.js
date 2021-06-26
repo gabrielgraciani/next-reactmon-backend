@@ -55,6 +55,9 @@ var ListItemsService = /** @class */ (function () {
                         return [4 /*yield*/, itemsRepository.findAndCount({
                                 skip: offset,
                                 take: limit,
+                                order: {
+                                    created_at: 'DESC',
+                                },
                             })];
                     case 1:
                         items = _c.sent();

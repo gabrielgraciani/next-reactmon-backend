@@ -55,6 +55,9 @@ var ListCitiesService = /** @class */ (function () {
                         return [4 /*yield*/, citiesRepository.findAndCount({
                                 skip: offset,
                                 take: limit,
+                                order: {
+                                    created_at: 'DESC',
+                                },
                             })];
                     case 1:
                         cities = _c.sent();

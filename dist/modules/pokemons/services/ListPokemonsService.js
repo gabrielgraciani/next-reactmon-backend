@@ -66,6 +66,9 @@ var ListPokemonsService = /** @class */ (function () {
                         return [4 /*yield*/, pokemonsRepository.findAndCount({
                                 skip: offset,
                                 take: limit,
+                                order: {
+                                    created_at: 'DESC',
+                                },
                             })];
                     case 1:
                         pokemons = _c.sent();

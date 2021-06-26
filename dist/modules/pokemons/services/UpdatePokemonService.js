@@ -64,6 +64,9 @@ var UpdatePokemonService = /** @class */ (function () {
                         if (!pokemon) {
                             throw new AppError_1.default('Pokemon not found', 404);
                         }
+                        if (parseInt(id, 10) <= 151) {
+                            throw new AppError_1.default("You don't have permission to delete this pokemon. Try to create a new pokemon and update it.");
+                        }
                         if (!(pokemon.image && imageFilename)) return [3 /*break*/, 4];
                         pokemonImageFilePath = path_1.default.join(upload_1.default.directory, pokemon.image);
                         return [4 /*yield*/, fs_1.default.promises.stat(pokemonImageFilePath)];
