@@ -1,6 +1,6 @@
 # Reactmon API
 
-### API do projeto Reactmon para fins educacionais.
+### API do projeto Reactmon.
 
 ## :notebook: Executando
 
